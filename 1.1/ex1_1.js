@@ -19,7 +19,3 @@ console.log(typeof (undi));
 
 let sym = Symbol();
 console.log(typeof (sym));
-
-
-
-
