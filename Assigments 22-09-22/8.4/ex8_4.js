@@ -6,6 +6,7 @@ key : arr[0].length
 let arr2 = arr.join('');
 arr2 = arr2.toLowerCase();
 arr2 = arr2.replace(/ /g,'')
+console.log(arr2);
 
 function letterCount(string) {
   var stringObject = {};
@@ -15,5 +16,5 @@ function letterCount(string) {
   return stringObject;
 }
 
-console.log(letterCount(arr2));
+// console.log(letterCount(arr2));
 
