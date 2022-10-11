@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          id: 167464,
+          firstName: "Jimmy",
+          lastName: "Arnold",
+          email: "jimmya@gmail.com",
+        },
+        {
+          id: 578447,
+          firstName: "Martha",
+          lastName: "Goldman",
+          email: "gold@hotmail.com",
+        },
+        {
+          id: 864578,
+          firstName: "Tim",
+          lastName: "Burton",
+          email: "timmy.hotmail.com",
+        },
+      ];
+      let firstName1;
+      let firstName2;
+      users.forEach((e, i) => {
+        if (i == 0) {
+          firstName1 = users[0].firstName;
+        }
+        if (i == users.length - 1) {
+          firstName2 = users[i].firstName;
+        }
+      });
+
+      const myUl = document.createElement("ul");
+      const myLi = document.createElement("li");
+      const myLi2 = document.createElement("li");
+      myLi.style.listStyle = "none";
+      myLi2.style.listStyle = "none";
+
+      myLi.innerHTML = firstName1;
+      myLi2.innerHTML = firstName2;
+      myUl.appendChild(myLi);
+      myUl.appendChild(myLi2);
+      document.body.appendChild(myUl);
+    </script>
+  </body>
+</html>
