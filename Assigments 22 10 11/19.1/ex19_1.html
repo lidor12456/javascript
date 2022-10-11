@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+    <script>
+      //   const myVar = document.getElementsByClassName("start-here");
+      //   myVar[0].innerText = "blaaa";
+
+      //   const sub = document.querySelectorAll("ul");
+      //   const a = document.createElement('title 2222');
+      //   sub.appendChild(a);
+
+      const startHere = document.querySelector("start-here");
+      // 1. Change the text from "title 2" to "main title"
+      startHere.textContent = "main title";
+
+      // 2. Add another subtitle with the text "subtitle 4"
+      const sub2 = startHere.nextSibling;
+      console.log(sub2);
+      sub2.innerText = "sub title 4";
+      const ttt = document.querySelector("ul>li>ul");
+      ttt.appendChild("sub2");
+      console.log(sub2);
+      // 3. Delete the last <li> element from the list.
+      document
+        .querySelectorAll("li")
+        [document.querySelectorAll("li").length - 1].remove();
+      // 4. Change the <title> element text to "Master Of The Dom".
+      document.querySelector("title").innerText = "Master Of The Dom";
+      // 5. Change the text of the <p> element ot something else of
+      // your (choice? i guess)
+      let insertText = `"Without music, 
+life would be a mistake."
+― Friedrich Nietzsche, Twilight of the Idols`;
+      document.querySelector("p").innerText = insertText;
+      document.querySelector("p").style.fontWeight = "bold";
+    </script>
+  </body>
+</html>
