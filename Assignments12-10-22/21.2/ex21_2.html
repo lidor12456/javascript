@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .fz {
+      font-size: 25px;
+    }
+  </style>
+  <body>
+    <span class="fz">How you doing?</span>
+    <button class="big">+</button>
+    <button class="small">-</button>
+
+    <script>
+      const myFontSize = document.querySelector(".fz");
+      computed = window.getComputedStyle(myFontSize);
+      console.log(computed.fontSize);
+      let changeFont = parseInt(computed.fontSize);
+
+      const btnBig = document.querySelector(".big");
+      const btnSmall = document.querySelector(".small");
+      btnBig.addEventListener("click", func1);
+      btnSmall.addEventListener("click", func2);
+
+      function func1() {
+        if (btnBig) {
+          changeFont += 10;
+        }
+        myFontSize.style.fontSize = changeFont + "px";
+        document.body.appendChild(myFontSize);
+      }
+      function func2() {
+        if (btnSmall) {
+          changeFont -= 10;
+        }
+        myFontSize.style.fontSize = changeFont + "px";
+        document.body.appendChild(myFontSize);
+      }
+
+      //   const func = (event) => {
+      //     if (input.value >= 18) {
+      //       console.log("ok");
+      //     } else {
+      //       console.log("not ok");
+      //     }
+      //   };
+    </script>
+  </body>
+</html>

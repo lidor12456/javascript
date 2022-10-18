@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aqua;
+        text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      h1 {
+        margin: 50px 50px;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      #incorrect {
+        color: rgb(255, 47, 47);
+        font-size: 40px;
+      }
+      #correct {
+        color: green;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Guess My Letter</h1>
+    <p id="correct"></p>
+    <h2>Letters You Gussed</h2>
+    <p id="incorrect"></p>
+    <button id="reset">clean</button>
+
+    <script>
+      function isLetter(str) {
+        return str.length === 1 && str.match(/[a-z]/i);
+      }
+
+      const incorrect = document.querySelector("#incorrect");
+      const correct = document.querySelector("#correct");
+
+      const alphabet = "abcdefghijklmnopqrstuvwxyz";
+      const randomCharacter =
+        alphabet[Math.floor(Math.random() * alphabet.length)];
+
+      const userCharacter = document.addEventListener("keypress", (e) => {
+        let tt = e.key;
+        if (!isLetter(tt)) {
+          alert("Only english letters");
+        }
+        if (tt.toUpperCase() == randomCharacter.toUpperCase()) {
+          const newItem = document.createElement("span");
+          newItem.innerText = `Yes! The coorect letter is ${tt}`;
+          correct.appendChild(newItem);
+        } else if (isLetter(tt)) {
+          const newItem = document.createElement("span");
+          newItem.innerText = tt.toUpperCase();
+          incorrect.appendChild(newItem);
+        }
+      });
+      function resett() {
+        incorrect.innerHTML = "";
+        correct.innerHTML = "";
+      }
+      const reset = document.querySelector("#reset");
+      reset.addEventListener("click", resett);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>
+      <input name="check" type="checkbox" id="check" />
+    </label>
+    <script>
+      const img = document.createElement("img");
+      img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
+
+      const checkBox = document.querySelector("#check");
+      checkBox.addEventListener("input", (e) => {
+        if (e.target.checked == true) {
+          document.body.appendChild(img);
+        } else {
+          document.body.removeChild(img);
+        }
+      });
+    </script>
+  </body>
+</html>
