@@ -48,7 +48,7 @@
       const randomCharacter =
         alphabet[Math.floor(Math.random() * alphabet.length)];
 
-      const userCharacter = document.addEventListener("keypress", (e) => {
+      const userCharacter = document.addEventListener("keyup", (e) => {
         let tt = e.key;
         if (!isLetter(tt)) {
           alert("Only english letters");
