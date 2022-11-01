@@ -1,0 +1,12 @@
+.display-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.hide {
+    visibility: hidden;
+}
+.card {
+    background-color: aqua;
+    color: brown;
+}

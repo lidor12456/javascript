@@ -20,19 +20,21 @@ const getArrOfCharacters = async () => {
     const planet = fetchData(results[i].homeworld);
     arrPromises.push(planet);
   }
-  //* Good practice
-  const arrOfWorlds = await Promise.all(arrPromises);
+  const arrOfWorlds = [];
+  for (let i = 0; i < results.length; i++) {
+    const planet = await fetchData(results[i].homeworld);
+    arrOfWorlds.push(planet);
+  }
   const structureData = structureCharObj(results, arrOfWorlds);
   return structureData;
 
-  //   //! Bad practice ↓
-  //   const arrOfWorlds = [];
-  //   for (let i = 0; i < results.length; i++) {
-  //     const planet = await fetchData(results[i].homeworld);
-  //     arrOfWorlds.push(planet);
-  //   }
-  //   const structureData = structureCharObj(results, arrOfWorlds);
-  //   return structureData;
+
+  //* Good practice
+  // const arrOfWorlds = await Promise.all(arrPromises);
+  // const structureData = structureCharObj(results, arrOfWorlds);
+  // return structureData;
+
+  
 };
 
 const structureCharObj = (charArr, worldsArr) => {
